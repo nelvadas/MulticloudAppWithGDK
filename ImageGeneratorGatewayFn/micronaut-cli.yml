@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.oracle.demo
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [amazon-api-gateway, app-name, aws-lambda, aws-lambda-custom-runtime, aws-lambda-events-serde, aws-lambda-handler-default, gcn-aws-cloud-gateway-function, gcn-bom, gcn-license, gcn-oci-cloud-gateway-function, graalvm, http-client-jdk, jackson-databind, java, junit, maven, maven-enforcer-plugin, micronaut-http-validation, oracle-function, oracle-function-http, properties, readme, serialization-jackson, shade, slf4j-simple, static-resources, x86]

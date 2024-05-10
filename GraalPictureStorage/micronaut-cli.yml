@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.example
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [app-name, aws-v2-sdk, gcn-aws-cloud-app, gcn-aws-objectstore, gcn-bom, gcn-license, gcn-oci-cloud-app, gcn-oci-objectstore, graalvm, http-client, java, java-application, junit, logback, maven, maven-enforcer-plugin, micronaut-http-validation, netty-server, object-storage-aws, object-storage-oracle-cloud, oracle-cloud-sdk, properties, readme, serialization-jackson, shade, static-resources]
