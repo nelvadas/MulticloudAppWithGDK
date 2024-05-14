@@ -1,26 +1,24 @@
 package com.example;
 
-import dev.langchain4j.data.image.Image;
-import dev.langchain4j.model.image.ImageModel;
-import dev.langchain4j.model.openai.OpenAiImageModel;
-import dev.langchain4j.model.output.Response;
-import io.micronaut.http.HttpResponse;
-import io.micronaut.http.HttpStatus;
-import io.micronaut.http.MediaType;
-import io.micronaut.http.annotation.Body;
-import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Post;
-import io.micronaut.http.server.util.HttpHostResolver;
-import io.micronaut.objectstorage.ObjectStorageOperations;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import dev.langchain4j.data.image.Image;
+import dev.langchain4j.model.image.ImageModel;
+import dev.langchain4j.model.openai.OpenAiImageModel;
+import dev.langchain4j.model.output.Response;
 import static io.micronaut.http.HttpHeaders.CONTENT_TYPE;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.HttpStatus;
+import io.micronaut.http.MediaType;
 import static io.micronaut.http.MediaType.IMAGE_PNG;
+import io.micronaut.http.annotation.Body;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Post;
 
 @Controller("/image")
 public class ImageController {

@@ -1,0 +1,1 @@
+{"_links":{"self":[{"href":"/image/generate","templated":false}]},"_embedded":{"errors":[{"message":"Content Type [application/octet-stream] not allowed. Allowed types: [text/plain]"}]},"message":"Unsupported Media Type"}
