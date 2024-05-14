@@ -39,7 +39,7 @@ For this demo we consider a SPA Front end Application using back end projects `I
 
 
 ## ImageGeneratorGatewayFn
-`ImageGeneratorGatewayFn` is Serverless GDK Gateway Function relying on LangChain4j to genrate png imagesfrom OpenAI Dalle-2.
+`ImageGeneratorGatewayFn` is Serverless GDK Gateway Function based on [LangChain4j](https://github.com/langchain4j/langchain4j) to genrate PNG images from OpenAI [DALL-E-2 API](https://platform.openai.com/docs/guides/images/image-generation)
 
 ![Nono le petit Robot](./images/nono1.png)
 
@@ -59,9 +59,9 @@ Follow the [GDK Guide](https://graal.cloud/gcn/gcn-modules/serverless/micronaut-
 
 
 ## GraalPictureStorage
-`GraalPictureStorage` use GDK Object storage to store generated images in a public cloud ( OCI/AWS for this demo)
+`GraalPictureStorage` uses GDK Object Storage common API to store and retreive generated images in/from a public cloud ( OCI/AWS for the stake of this demo)
 
-Use the GDK Launcher to generate a new project 
+Use the [GDK Launcher](https://graal.cloud/gcn/launcher/) to generate a new `Application` project.
 ```bash
 gcn create-app com.oracle.demo.GraalPixgenStorageDemo --build=MAVEN --jdk=21 --lang=JAVA --test=JUNIT --example-code=true --clouds=OCI,AWS --services=LOGGING,OBJECTSTORE,TRACING --features=graalvm
 ```
