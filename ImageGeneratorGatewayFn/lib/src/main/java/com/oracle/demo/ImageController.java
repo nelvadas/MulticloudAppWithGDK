@@ -16,7 +16,7 @@
 
 package com.oracle.demo;
 
-import com.google.gson.JsonObject;
+
 import dev.langchain4j.data.image.Image;
 import dev.langchain4j.model.image.ImageModel;
 import dev.langchain4j.model.openai.OpenAiImageModel;

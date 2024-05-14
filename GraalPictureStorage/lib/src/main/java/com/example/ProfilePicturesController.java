@@ -16,15 +16,18 @@
 
 package com.example;
 
-import dev.langchain4j.data.image.Image;
-import dev.langchain4j.model.image.ImageModel;
-import dev.langchain4j.model.openai.OpenAiImageModel;
-import dev.langchain4j.model.output.Response;
-import io.micronaut.http.*;
-import io.micronaut.http.annotation.Body;
+import java.net.URI;
+import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static io.micronaut.http.HttpHeaders.ETAG;
+import io.micronaut.http.HttpRequest;
+import io.micronaut.http.HttpResponse;
+import static io.micronaut.http.MediaType.IMAGE_JPEG_TYPE;
+import io.micronaut.http.MutableHttpResponse;
 import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Headers;
-import io.micronaut.http.annotation.Post;
 import io.micronaut.http.multipart.CompletedFileUpload;
 import io.micronaut.http.server.types.files.StreamedFile;
 import io.micronaut.http.server.util.HttpHostResolver;
@@ -35,20 +38,6 @@ import io.micronaut.objectstorage.request.UploadRequest;
 import io.micronaut.objectstorage.response.UploadResponse;
 import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.net.URI;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Base64;
-import java.util.Optional;
-
-import static io.micronaut.http.HttpHeaders.CONTENT_TYPE;
-import static io.micronaut.http.HttpHeaders.ETAG;
-import static io.micronaut.http.MediaType.*;
 
 @Controller(ProfilePicturesController.PREFIX)
 @ExecuteOn(TaskExecutors.IO)
@@ -59,17 +48,6 @@ class ProfilePicturesController implements ProfilePicturesApi {
 
     private final ObjectStorageOperations<?, ?, ?> objectStorage;
     private final HttpHostResolver httpHostResolver;
-
-
-
-    ProfilePicturesController(ObjectStorageOperations<?, ?, ?> objectStorage,
-            HttpHostResolver httpHostResolver) {
-        this.objectStorage = objectStorage;
-        this.httpHostResolver = httpHostResolver;
-    }
-
-
-
 
     @Override
     public HttpResponse<?> upload(CompletedFileUpload fileUpload,
@@ -84,15 +62,27 @@ class ProfilePicturesController implements ProfilePicturesApi {
                 .header(ETAG, response.getETag());
     }
 
-    private static String buildKey(String userId) {
-        return userId + ".jpg";
+   
+
+
+    ProfilePicturesController(ObjectStorageOperations<?, ?, ?> objectStorage,
+            HttpHostResolver httpHostResolver) {
+        this.objectStorage = objectStorage;
+        this.httpHostResolver = httpHostResolver;
     }
+
 
     private URI location(HttpRequest<?> request, String userId) {
         return UriBuilder.of(httpHostResolver.resolve(request))
                 .path(PREFIX)
                 .path(userId)
                 .build();
+    }
+
+
+
+    private static String buildKey(String userId) {
+        return userId + ".jpg";
     }
 
     @Override
