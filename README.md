@@ -194,3 +194,28 @@ $ aws s3 ls   $MON_S3_BUCKET
 
 # More resources 
 * [Getting Started with GDK](https://graal.cloud/gcn/get-started/#)
+
+## Graal Development kit
+
+1. VSCode Extension to develop Cloud Apps
+[here](https://marketplace.visualstudio.com/items?itemName=oracle-labs-graalvm.graal-cloud-native-pack)
+
+2. GDK Cloud modules support Oracle Cloud’s Modern App Development framework [here](https://www.oracle.com/application-development/modern-app-development/)
+
+3. Graal Development Kit Hands On Lab [here](https://www.graal.cloud/gcn/hands-on-labs/)
+
+4. GDK guides [here](https://www.graal.cloud/gcn/guides/)
+
+5. GDK - OCI Serverless [here](https://graal.cloud/gcn/gcn-modules/serverless/micronaut-function-oci-expert/?buildTool=gradle&lang=java)
+
+6. Self Hosted Labs Object Storage Labs with GDK [here](https://luna.oracle.com/lab/c8d189da-25de-4010-a2b2-543b76e93502)
+
+7. Micronaut Oracle Cloud
+[here](https://micronaut-projects.github.io/micronaut-oracle-cloud/latest/guide/#introduction)
+
+8. Miconaut - Setup Custom file Size for uploads
+[here](https://micronaut.io/2019/02/21/uploading-big-files-with-micronaut-and-elastic-beanstalk/)
+
+9. OpenAI - Image Generation [API](https://platform.openai.com/docs/guides/images/image-generation)
+10. LangChain4J [Interfacing LLM in Java](https://github.com/langchain4j/langchain4j)
+
